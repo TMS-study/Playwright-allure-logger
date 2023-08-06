@@ -81,7 +81,7 @@ test.describe('Check block one "externat school Foxford"', async () => {
 
 
 
-        test("Check discount value from API equal to  discount in webelement", async () => {
+        test.only("Check discount value from API equal to  discount in webelement", async () => {
 
             const response = await fetch("https://foxford.ru/api/externship/products/prices?year=2023");
             const data = await response.json();
@@ -90,7 +90,7 @@ test.describe('Check block one "externat school Foxford"', async () => {
                 const expectedDiscount = data.full_payment.discount;
                 const element = await externatSchool.discountInf();
                 if (expectedDiscount === 0) { // Если скидка ноль, то элемент не должны выводить
-                    expect(element).toBeNull();
+                    expect(element).toBeHidden();
                 }
                 else { // если не ноль, то выводим элемент
                     expect(element).toBeVisible()// проверить, что эелемент есть

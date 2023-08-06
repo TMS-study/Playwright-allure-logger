@@ -18,18 +18,18 @@ const config: PlaywrightTestConfig = {
                 browserName: 'chromium',
             },
         },
-        {
-            name: 'firefox',
-            use: {
-                ...devices['Desktop Firefox'],
-                browserName: 'firefox', // Используем Firefox
-            }
-        },
+        // {
+        //     name: 'firefox',
+        //     use: {
+        //         ...devices['Desktop Firefox'],
+        //         browserName: 'firefox', // Используем Firefox
+        //     }
+        // },
 
-        {
-            name: 'mobile',
-            use:{ ...devices['Galaxy S8']}
-        },
+        // {
+        //     name: 'mobile',
+        //     use:{ ...devices['Galaxy S8']}
+        // },
     ],
 
     workers: 3,

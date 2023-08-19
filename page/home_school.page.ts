@@ -42,7 +42,7 @@ export default class HomeSchool extends BasePage {
 
     async tryFreeClick() {
         //await this.openPage();
-        await this.tryFree.click();
+        await this.tryFree.click({ force: true });
     }
 
     async areButtonsClass() {

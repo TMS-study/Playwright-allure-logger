@@ -29,20 +29,14 @@ export default class HomeSchool extends BasePage {
 
     async enrollSchoolClick() {
         //await this.openPage();
-        
-        await this.enrollSchool.click({ force: true });
+        await this.enrollSchool.hover();
+        await this.enrollSchool.click();
     }
-
-    // async enrollSchoolClick() {
-    //     const element = await this.enrollSchool.elementHandle(); 
-    //         await element.scrollIntoViewIfNeeded(); /
-    //         await element.click(); // Клик по элементу
-    
-
 
     async tryFreeClick() {
         //await this.openPage();
-        await this.tryFree.click({ force: true });
+        await this.tryFree.hover();
+        await this.tryFree.click();
     }
 
     async areButtonsClass() {

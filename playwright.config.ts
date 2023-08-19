@@ -9,7 +9,7 @@ const config: PlaywrightTestConfig = {
         trace: 'on-first-retry',
         screenshot: 'only-on-failure',
         viewport: {width:1800, height: 1024},
-        actionTimeout: 20*1000,
+        actionTimeout: 30*1000,
         navigationTimeout: 15*1000
     },
 

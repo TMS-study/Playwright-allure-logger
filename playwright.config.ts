@@ -27,7 +27,7 @@ const config: PlaywrightTestConfig = {
     workers: 3,
     fullyParallel: true,
     reporter: [
-        //['html'],
+        ['html'],
         [
             "allure-playwright",
             {

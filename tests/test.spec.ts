@@ -14,11 +14,11 @@ test.describe('Check home_school page', async () => {
     });
 
 
-    // logger.debug('show error');
-    // test('Check button tryFree', async ({ page }) => {
-    //     await externatSchool.tryFreeClick();
-    //     await expect(page.url()).toContain('https://externat.foxford.ru/demo');
-    // });
+    logger.debug('show error');
+    test('Check button tryFree', async ({ page }) => {
+        await externatSchool.tryFreeClick();
+        await expect(page.url()).toContain('https://externat.foxford.ru/demo');
+    });
 
     test('Check button enrollSchool', async () => {
         

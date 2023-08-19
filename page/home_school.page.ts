@@ -15,8 +15,8 @@ export default class HomeSchool extends BasePage {
 
     constructor(page: Page) {
         super(page);
-        this.enrollSchool = page.locator('//button[@class="styled__Root-gAnUEV hwaqAx styled__Action-knGcCz gzQlLk"]');
-        this.tryFree = page.locator('//a[@class="styled__RootA-isrlLJ cBEMFF styled__Action-knGcCz gzQlLk"]');
+        this.enrollSchool = page.locator('//button[contains(@class, "styled__Root-lnJslf")]//div[contains(@class, "cmCAGE") and text() = "Поступить в школу"]');
+        this.tryFree = page.locator('//div[contains(@class, "styled__Actions-hNOqRH")]//div[contains(@class, "styled__Content-jZzzzQ") and text() = "Попробовать бесплатно"]');
         this.application = page.locator('//div[@name="request"]');
         this.buttonClass = page.locator('div.styled__TabsWrapper-faUaGh div.fox-ui__sc-ggtlgu-3');
         this.discountBlock = page.locator('fox-ui__sc-s2fogy-0 iwHwmg fox-Text styled__Discount-epYifQ gaTjhL');
@@ -30,7 +30,7 @@ export default class HomeSchool extends BasePage {
     async enrollSchoolClick() {
         //await this.openPage();
         
-        await this.enrollSchool.click();
+        await this.enrollSchool.click({ force: true });
     }
 
     // async enrollSchoolClick() {

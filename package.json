@@ -5,13 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test --headed",
-    "report": "npx playwright show-report"
+    "allure:test": "npx playwright test --reporter=allure-playwright",
+    "allure:report:generate": "npx allure generate ./allure-results --clean",
+    "allure:report:open": "npx allure open ./allure-report"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.36.2"
+    "@playwright/test": "^1.36.2",
+    "allure-commandline": "^2.23.1",
+    "allure-playwright": "^2.5.0"
+  },
+  "dependencies": {
+    "log4js": "^6.9.1"
   }
 }
-
-

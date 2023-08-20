@@ -30,12 +30,7 @@ export default class HomeSchool extends BasePage {
 
 
 
-    public async enrollSchoolClick() {
-        await test.step("I click  button enrollSchool", async () => {
-            clickButtonLog(this.enrollSchool);
-            await this.enrollSchool.click();
-        })
-    }
+   
 
     // async tryFreeClick() {
     //     await clickButtonLog(this.tryFree);
@@ -47,6 +42,12 @@ export default class HomeSchool extends BasePage {
         await test.step("I click  button tryFree", async () => {
             clickButtonLog(this.tryFree);
             await this.tryFree.click();
+        })
+    }
+    public async enrollSchoolClick() {
+        await test.step("I click  button enrollSchool", async () => {
+            clickButtonLog(this.enrollSchool);
+            await this.enrollSchool.click();
         })
     }
 

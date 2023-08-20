@@ -29,21 +29,8 @@ export default class HomeSchool extends BasePage {
     }
 
 
-    // async enrollSchoolClick() {
-    //     //console.log("Before clicking enrollSchool"); // Отладочный вывод
-    //     await clickButtonLog(this.enrollSchool);
-    
-    //     //console.log("Before hovering enrollSchool"); // Отладочный вывод
-    //     await this.enrollSchool.scrollIntoViewIfNeeded();
-    //     await this.enrollSchool.hover();
-    
-    //     //console.log("Before clicking after hover"); // Отладочный вывод
-    //     await this.enrollSchool.click();
-    
-    //     //..console.log("After clicking enrollSchool"); // Отладочный вывод
-    // }
 
-     async enrollSchoolClick() {
+    public async enrollSchoolClick() {
         await test.step("I click  button enrollSchool", async () => {
             clickButtonLog(this.enrollSchool);
             await this.enrollSchool.click();
@@ -56,9 +43,10 @@ export default class HomeSchool extends BasePage {
     //     await this.tryFree.hover();
     //     await this.tryFree.click();
     // }
-    async tryFreeClick() {
+    public async tryFreeClick() {
         await test.step("I click  button tryFree", async () => {
             clickButtonLog(this.tryFree);
+            await this.tryFree.scrollIntoViewIfNeeded();
             await this.tryFree.click();
         })
     }
@@ -75,32 +63,32 @@ export default class HomeSchool extends BasePage {
     //     });
     // }
 
-    async areButtonsClass() {
+    public async areButtonsClass() {
         //await this.openPage();
         const buttons = await this.buttonClass.all();
         return await Promise.all(buttons.map(async (button) => await button.isEnabled()));
     }
 
-    async discountInf() {
+    public async discountInf() {
         //await this.openPage();
         return this.discountBlock;
     }
 
-    async areStartLearnInFormat() {
+    public async areStartLearnInFormat() {
        // await this.openPage();
         const buttons = await this.startLearnInFormat.all();
         return await Promise.all(buttons.map(async (button) => await button.isEnabled()));
     }
 
-    async clickdetailStandart(){
+    public async clickdetailStandart(){
         await clickButtonLog(this.detailStandart);
         await this.detailStandart.first().click()
     }
-    async clickdetailPremium(){
+    public async clickdetailPremium(){
         await clickButtonLog(this.detailPremium);
         await this.detailPremium.first().click()
     }
-    async clickdetailMiniClass(){
+    public async clickdetailMiniClass(){
         await clickButtonLog(this.detaimMiniClass);
         await this.detaimMiniClass.first().click()
     }

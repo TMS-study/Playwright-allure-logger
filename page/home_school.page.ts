@@ -1,5 +1,7 @@
-import { Locator, Page } from "@playwright/test";
+import { Locator, Page, test } from "@playwright/test";
 import BasePage from "./base.page";
+import { logger } from "../log.conf";
+import { clickButtonLog } from "../log.conf";
 
 export default class HomeSchool extends BasePage {
     readonly enrollSchool: Locator;
@@ -27,17 +29,51 @@ export default class HomeSchool extends BasePage {
     }
 
 
-    async enrollSchoolClick() {
-        //await this.openPage();
-        await this.enrollSchool.hover();
-        await this.enrollSchool.click();
+    // async enrollSchoolClick() {
+    //     //console.log("Before clicking enrollSchool"); // Отладочный вывод
+    //     await clickButtonLog(this.enrollSchool);
+    
+    //     //console.log("Before hovering enrollSchool"); // Отладочный вывод
+    //     await this.enrollSchool.scrollIntoViewIfNeeded();
+    //     await this.enrollSchool.hover();
+    
+    //     //console.log("Before clicking after hover"); // Отладочный вывод
+    //     await this.enrollSchool.click();
+    
+    //     //..console.log("After clicking enrollSchool"); // Отладочный вывод
+    // }
+
+     async enrollSchoolClick() {
+        await test.step("I click  button enrollSchool", async () => {
+            clickButtonLog(this.enrollSchool);
+            await this.enrollSchool.click();
+        })
     }
 
+    // async tryFreeClick() {
+    //     await clickButtonLog(this.tryFree);
+    //     await this.tryFree.scrollIntoViewIfNeeded();
+    //     await this.tryFree.hover();
+    //     await this.tryFree.click();
+    // }
     async tryFreeClick() {
-        //await this.openPage();
-        await this.tryFree.hover();
-        await this.tryFree.click();
+        await test.step("I click  button tryFree", async () => {
+            clickButtonLog(this.tryFree);
+            await this.tryFree.click();
+        })
     }
+
+    // async tryFreeClick() {
+    //     await clickButtonLog(this.tryFree);
+        
+    //     await this.page.evaluate(() => {
+    //         if (this.tryFree) {
+    //             this.tryFree.click();
+    //         } else {
+    //             console.error('Element not found');
+    //         }
+    //     });
+    // }
 
     async areButtonsClass() {
         //await this.openPage();
@@ -57,15 +93,15 @@ export default class HomeSchool extends BasePage {
     }
 
     async clickdetailStandart(){
-       // await this.openPage();
+        await clickButtonLog(this.detailStandart);
         await this.detailStandart.first().click()
     }
     async clickdetailPremium(){
-        //await this.openPage();
+        await clickButtonLog(this.detailPremium);
         await this.detailPremium.first().click()
     }
     async clickdetailMiniClass(){
-        //await this.openPage();
+        await clickButtonLog(this.detaimMiniClass);
         await this.detaimMiniClass.first().click()
     }
 

@@ -13,21 +13,17 @@ test.describe('Check home_school page', async () => {
          await open.openPage();
     });
 
-
-    logger.debug('show error');
+    test('Check button enrollSchool', async () => {
+        await externatSchool.enrollSchoolClick();
+        await externatSchool.application.scrollIntoViewIfNeeded();
+        await expect(externatSchool.application).toBeVisible();
+    });
+    
     test('Check button tryFree', async ({ page }) => {
         await externatSchool.tryFreeClick();
         await page.waitForURL('https://externat.foxford.ru/demo');
         await expect(page.url()).toContain('https://externat.foxford.ru/demo');
     });
-
-    test('Check button enrollSchool', async () => {
-        
-        await externatSchool.enrollSchoolClick();
-        await externatSchool.application.scrollIntoViewIfNeeded();
-        await expect(externatSchool.application).toBeVisible();
-    });
-
 
     test('Check buttons 1-11 class are clickable', async () => {
 

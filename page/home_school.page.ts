@@ -46,7 +46,6 @@ export default class HomeSchool extends BasePage {
     public async tryFreeClick() {
         await test.step("I click  button tryFree", async () => {
             clickButtonLog(this.tryFree);
-            await this.tryFree.scrollIntoViewIfNeeded();
             await this.tryFree.click();
         })
     }
